@@ -16,7 +16,6 @@ html {
 }
 
 
-
 .wrapper-radio {
     background-color: #ffffff;
     width: 600px;
@@ -25,18 +24,32 @@ html {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    border-radius: 10px;
+}
+
+.radio-container {
+    display:flex;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .receive-btn {
     background-color: #134d71;
-    font: #ffffff;
+    color: #ffffff;
     align-items: center;
 }
 
 .wrapper-img {
     background-color: #ffffff;
+    width: 800px;
+    height: 140px;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .image {
-    width: 100px;
+    width: 80px;
 }
