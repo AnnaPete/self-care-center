@@ -68,5 +68,5 @@ html {
 }
 
 .hidden {
-    none
+   display: none;
 }
