@@ -1,10 +1,16 @@
 var stylesheet = document.querySelector(".stylesheet");
 var mantraBtn = document.querySelector("#mantra");
 var affirmBtn = document.querySelector("#affirmation");
-var receiveButton = document.querySelector(".receive-btn");
-var addMessageButton = document.querySelector(".custom-message");
+var submitButton = document.querySelector("#submit");
+var receiveButton = document.querySelector("#receive-btn");
+var addMessageButton = document.querySelector("#custom-message");
 var yogi = document.querySelector("#yogi");
 var showMessage = document.querySelector(".show-message");
+var form = document.querySelector(".user-input");
+var userSelectMantra = document.querySelector("#user-mantra");
+var userSelectAffirm = document.querySelector("#user-affirmation");
+var userMessage = document.querySelector("#user-message");
+
 var mantras = [
     "Breathing in, I send myself love. Breathing out, I send love to someone else who needs it.", 
     "The first step is always the hardest.", 
@@ -40,14 +46,12 @@ var affirmations = [
 
 var randomMessage;
 
-// yogi.classList.add("hidden");
-
 // Event Listeners
 receiveButton.addEventListener("click", generateMessage);
-addMessageButton.addEventListener("click", toForm)
+addMessageButton.addEventListener("click", toForm);
+submitButton.addEventListener("click", submitUserInput);
 
-
-// Event handlers
+// Event Handlers
 function generateMessage() {
     if (affirmBtn.checked) {
         randomMessage = getRandomIndex(affirmations);
@@ -60,7 +64,21 @@ function generateMessage() {
 }
 
 function toForm() {
+    form.classList.remove("hidden");
+    yogi.classList.add("hidden");
+}
 
+function submitUserInput(event) {
+    event.preventDefault();
+    var newMessage = userMessage.value;
+    if (userSelectAffirm.checked) {
+        affirmations.push(newMessage);
+    } else if (userSelectMantra.checked) {
+        mantras.push(newMessage);
+    }
+    form.classList.add("hidden");
+    showMessage.classList.remove("hidden");
+    showMessage.innerText = newMessage;
 }
 
 function getRandomIndex(array) {

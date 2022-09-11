@@ -10,22 +10,37 @@
     <section class="wrapper-radio">
       <div class="radio-container">
         <div>
-          <input type="radio" id="mantra" name="radio" value="mantra" checked>
+          <input type="radio" id="mantra" name="radio" value="mantra" checked/>
           <label for="mantra"> Mantra </label>
         </div>
         <div>
-          <input type="radio" id="affirmation" name="radio" value="affirmation" checked>
+          <input type="radio" id="affirmation" name="radio" value="affirmation"/>
           <label for="affirmation"> Affirmation </label>
         </div>
       </div>
-      <div class="buttons" id="buttons">
-        <button type="button" class="receive-btn"> Receive Message </button>
-        <button type="button" class="custom-message"> Add Message </button>
+      <div class="buttons-container">
+        <button class="button" id="receive-btn"> Receive Message </button>
+        <button class="button" id="custom-message"> Add Message </button>
       </div>
     </section>
     <section class="wrapper-img">
       <img class="image" id="yogi" src="assets/meditate.svg" alt="person-pic">
       <p class="show-message hidden"></p>
+      <form class="user-input wrapper-radio hidden">
+        <div class="radio-container">
+          <div>
+            <input type="radio" id="user-mantra" name="radio" value="user-mantra" checked/>
+            <label for="user-mantra"> Mantra </label>
+          </div>
+          <div>
+            <input type="radio" id="user-affirmation" name="radio" value="user-affirmation"/>
+            <label for="user-affirmation"> Affirmation </label>
+          </div>
+        </div>
+        <label for="user-message"> New Message </label>
+        <input class="user-message" id="user-message"/>
+        <button class="button" id="submit"> Submit </button>
+      </form>
     </section>
     <script type="text/javascript" src="main.js"></script>
   </body>
